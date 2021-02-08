@@ -5,6 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta property="og:url" content="http://cs-143-pos.herokuapp.com"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="CS 143 Project: Point Of Sale"/>
+    <meta property="og:description" content="This our project for CS 143 - Web Programming"/>
+    <meta property="og:image" content="http://cs-143-pos.herokuapp.com/media/icon-144x144.png"/>
+
+
+
+
     <title>@yield("title", "POS")</title>
 
     <livewire:styles/>
