@@ -9,7 +9,7 @@
 
     <meta property="og:url" content="http://cs-143-pos.herokuapp.com"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="CS 143 Project: Point Of Sale"/>
+    <meta property="og:title" content="@yield("title", "CS 143 Project: Point Of Sale")"/>
     <meta property="og:description" content="This our project for CS 143 - Web Programming"/>
     <meta property="og:image" content="http://cs-143-pos.herokuapp.com/media/icon-144x144.png"/>
 
