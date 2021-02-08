@@ -20,204 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81937f2-e223-4a74-be41-6793a4d014be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Support/ModelWithJsonFile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Support/Traits/Livewire/HasStatusNotifier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Support/Traits/Livewire/Sortable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Support/Traits/Livewire/WithPagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/paper-dashboard.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/paper-dashboard.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/demo/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/demo/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/nucleo-icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/nucleo-icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/nucleo-icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/nucleo-icons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/bg5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/damir-bosnjak.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/default-avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/ayo-ogunseinde-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/ayo-ogunseinde-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/clem-onojeghuo-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/clem-onojeghuo-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/clem-onojeghuo-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/clem-onojeghuo-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/erik-lucatero-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/erik-lucatero-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/joe-gardner-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/joe-gardner-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/kaci-baum-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/faces/kaci-baum-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/jan-sendereks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/logo-small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mike.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/core/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/core/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/core/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/paper-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/paper-dashboard.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/paper-dashboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/plugins/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/plugins/chartjs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/plugins/perfect-scrollbar.jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/spinner.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_alerts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_animated-buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_checkboxes-radio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_fixed-plugin.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_footers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_images.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_inputs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_misc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_nucleo-outline.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_page-header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_responsive.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/cards/_card-chart.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/cards/_card-map.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/cards/_card-plain.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/cards/_card-stats.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/cards/_card-user.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_inputs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_page-header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_transparency.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/mixins/_vendor-prefixes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/plugins/_plugin-animate-bootstrap-notify.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/paper-dashboard/plugins/_plugin-perfect-scrollbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_breadcrumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_button-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_carousel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_close.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_code.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_custom-forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_images.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_input-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_jumbotron.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_popover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_print.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_progress.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_root.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_spinners.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_toasts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_transitions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_type.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_utilities.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/bootstrap-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/bootstrap-reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/bootstrap.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_background-variant.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_border-radius.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_caret.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_deprecate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_gradients.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_hover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_lists.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_reset-text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_resize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_size.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_table-row.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_text-hide.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_transition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/mixins/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_align.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_background.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_borders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_display.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_embed.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_flex.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_overflow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_position.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_shadows.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_sizing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_spacing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_stretched-link.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/utilities/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bootstrap/vendor/_rfs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/partials/livewireDeleteConfirmation.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/partials/status.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/partials/validation-status.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pos.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,18 +156,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/templates/partials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GIT\pos" />
       <recent name="C:\GIT\pos\resources\views\templates\partials" />
       <recent name="C:\GIT\pos\resources\lang\en" />
       <recent name="C:\GIT\pos\resources\views\admin\users" />
       <recent name="C:\GIT\pos\resources\sass" />
-      <recent name="C:\GIT\pos\public\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GIT\pos\resources\views" />
@@ -385,7 +189,7 @@
       <updated>1612707572787</updated>
       <workItem from="1612707573834" duration="363000" />
       <workItem from="1612779330263" duration="8836000" />
-      <workItem from="1612789312918" duration="3725000" />
+      <workItem from="1612789312918" duration="4071000" />
     </task>
     <servers />
   </component>
@@ -405,6 +209,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="725" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612793138496">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612793138496" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1612786192975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
