@@ -16,7 +16,8 @@
         "laravel/framework": "^7.0",
         "laravel/telescope": "3.3",
         "laravel/tinker": "^2.0",
-        "livewire/livewire": "^2.3"
+        "livewire/livewire": "^2.3",
+        "phpseclib/bcmath_compat": "2.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
