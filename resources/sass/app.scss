@@ -1,5 +1,6 @@
 @import "bootstrap/bootstrap";
 
+@import "~nprogress/nprogress.css";
 
 /* enable absolute positioning */
 .inner-addon {
@@ -74,3 +75,7 @@
 }
 
 
+.sidebar .sidebar-wrapper,
+.off-canvas-sidebar .sidebar-wrapper {
+    overflow: hidden;
+}

@@ -86,12 +86,20 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $success = DB::transaction(function () use (&$request, &$user) {
-            $user->update([
+
+            $data = [
                 "first_name" => $request->first_name,
                 "last_name" => $request->last_name,
                 "username" => $request->username,
                 "role" => $request->role,
-            ]);
+            ];
+
+            if ($request->reset_password) {
+                $data["reset_password_required"] = true;
+                $data["password"] = bcrypt($request->reset_password);
+            }
+
+            $user->update($data);
 
             return true;
         });

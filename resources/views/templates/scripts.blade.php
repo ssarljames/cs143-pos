@@ -11,6 +11,8 @@
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
 
+<script src="/js/app.js" type="text/javascript"></script>
+
 
 <script>
     $(document).ready(function () {

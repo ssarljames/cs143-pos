@@ -78,18 +78,17 @@
 {{--                    </form>--}}
                     <ul class="navbar-nav">
                         <li class="nav-item btn-rotate dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="nc-icon nc-bell-55"></i>
-                                John Doe
+                                {{ auth()->user()->full_name }}
                                 <p>
                                     <span class="d-lg-none d-md-block">Some Actions</span>
                                 </p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="{{ route("account") }}">Account</a>
+                                <a class="dropdown-item" href="{{ route("logout") }}">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -104,17 +103,17 @@
                 </div>
             </div>
         </div>
-        <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="credits ml-auto">
-                      <span class="copyright">
-                        © 2020, made with <i class="fa fa-heart heart"></i> by Creative Tim
-                      </span>
-                    </div>
-                </div>
-            </div>
-        </footer>
+{{--        <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">--}}
+{{--            <div class="container-fluid">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="credits ml-auto">--}}
+{{--                      <span class="copyright">--}}
+{{--                        © 2020, made with <i class="fa fa-heart heart"></i> by Creative Tim--}}
+{{--                      </span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </footer>--}}
     </div>
 </div>
 

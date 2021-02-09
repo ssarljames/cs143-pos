@@ -39,7 +39,7 @@
                             <td>{{ $user->last_name }}</td>
                             <td>{{ $user->first_name }}</td>
                             <td>{{ $user->username }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td>{{ strtoupper($user->role) }}</td>
                             <td>
                                 <a class="btn" href="{{ route("users.edit", $user->id) }}">
                                     <i class="fa fa-edit"></i>

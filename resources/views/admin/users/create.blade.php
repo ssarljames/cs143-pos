@@ -1,7 +1,11 @@
 @extends("app")
 
 @section("title", "Users")
-@section("page-title", "Create User")
+
+@section("page-title")
+    <i class="fa fa-plus"></i>
+    Create New User
+@endsection
 
 @section("page-content")
 
@@ -54,10 +58,10 @@
 
 
                         <div class="text-right">
-                            <button class="btn btn-success text-white px-30">
+                            <button type="submit" class="btn btn-success text-white px-30">
                                 Save
                             </button>
-                            <a href="../" class="btn text-muted">
+                            <a href="./" class="btn text-muted">
                                 <i>Cancel</i>
                             </a>
                         </div>

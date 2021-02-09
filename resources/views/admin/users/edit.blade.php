@@ -1,7 +1,11 @@
 @extends("app")
 
 @section("title", "Users")
-@section("page-title", "Edit User")
+
+@section("page-title")
+    <i class="fa fa-edit"></i>
+    Edit User
+@endsection
 
 @section("page-content")
 
@@ -51,10 +55,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    @php
+                                        $resetPassword = generateRandomString(5);
+                                    @endphp
+                                    <label>
+                                        <input type="checkbox" name="reset_password" value="{{ $resetPassword }}"> Reset Password to <strong class="bg-secondary text-white px-1 rounded">{{ $resetPassword }}</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
 
                         <div class="text-right">
-                            <button class="btn btn-success text-white px-30">
+                            <button type="submit" class="btn btn-success text-white px-30">
                                 Save
                             </button>
                             <a href="../" class="btn text-muted">

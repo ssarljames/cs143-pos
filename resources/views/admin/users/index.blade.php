@@ -1,7 +1,11 @@
 @extends("app")
 
 @section("title", "Users")
-@section("page-title", "Users")
+
+@section("page-title")
+    <i class="fa fa-users"></i>
+    Users
+@endsection
 
 @section("page-content")
 

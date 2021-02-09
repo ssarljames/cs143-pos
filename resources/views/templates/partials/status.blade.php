@@ -13,6 +13,8 @@
             <span aria-hidden="true">×</span>
         </button>
         <h6 class="alert-heading font-size-h6 font-w400">@lang('messages.error.title')</h6>
-        <p class="mb-0"> {{session('error')}}</p>
+        <p class="mb-0">
+            @lang('messages.error.message')
+        </p>
     </div>
 @endif

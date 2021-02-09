@@ -5,6 +5,13 @@ namespace App\Http\Requests\Admin\User;
 use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property string first_name
+ * @property string last_name
+ * @property string username
+ * @property string role
+ * @property string reset_password
+ */
 class UpdateUserRequest extends FormRequest
 {
     /**
