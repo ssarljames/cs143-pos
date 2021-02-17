@@ -3,28 +3,7 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-    <IfModule mod_headers.c>
-        <FilesMatch "\.(bmp|cur|gif|ico|jpe?g|png|svgz?|webp|pdf|m4v|avi|mpg|mp4|mov|wmv|flv|webm|mkv|json)$">
-            Header set Access-Control-Allow-Origin "*"
-        </FilesMatch>
-
-
-        <FilesMatch "\.(json)$">
-            ForceType 'application/json; charset=UTF-8'
-        </FilesMatch>
-    </IfModule>
-
     RewriteEngine On
-
-
-    RewriteRule ^index.php/(.+) /$1 [R=301,L]
-
-    # Force HTTPS for assets
-    RewriteCond %{HTTPS} off
-    # First rewrite to HTTPS:
-    # Don't put www. here. If it is already there it will be included, if not
-    # the subsequent rule will catch it.
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -35,11 +14,8 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-
-    # Handle Front Controller...
+    # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-
 </IfModule>
