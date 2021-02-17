@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 
 class ForceHttps
 {
@@ -17,8 +18,8 @@ class ForceHttps
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && config("app.env") !== 'local') {
-            return redirect()->secure($request->getRequestUri());
+        if (config("app.env") !== 'local') {
+            URL::forceScheme('https');
         }
 
         return $next($request);
