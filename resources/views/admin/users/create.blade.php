@@ -20,13 +20,13 @@
                         @include("templates.partials.validation-status")
 
                         <div class="row">
-                            <div class="col-md-6 pr-1">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>First Name</label>
                                     <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ old("first_name") }}">
                                 </div>
                             </div>
-                            <div class="col-md-6 pl-1">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Last Name</label>
                                     <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{ old("last_name") }}">
@@ -34,13 +34,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 pr-1">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old("username") }}">
                                 </div>
                             </div>
-                            <div class="col-md-6 pl-1">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Role</label>
                                     <select name="role" class="form-control" id="">

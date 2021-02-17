@@ -27,9 +27,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             return view('admin.dashboard.index');
         })->name("transactions");
 
-        Route::get('/inventory', function () {
-            return view('admin.dashboard.index');
-        })->name("inventory");
+        Route::get('/inventory', "InventoryController")->name("inventory");
 
         Route::group(["prefix" => "users", "as" => "users."], function () {
             Route::get("/", "UserController@index")->name("index");
@@ -37,6 +35,15 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             Route::get("/{user}/edit", "UserController@edit")->name("edit");
             Route::put("/{user}", "UserController@update")->name("update");
             Route::get("/create", "UserController@create")->name("create");
+        });
+
+
+        Route::group(["prefix" => "categories", "as" => "categories."], function () {
+            Route::get("/", "CategoryController@index")->name("index");
+            Route::post("/", "CategoryController@store")->name("store");
+            Route::get("/{category}/edit", "CategoryController@edit")->name("edit");
+            Route::put("/{category}", "CategoryController@update")->name("update");
+            Route::get("/create", "CategoryController@create")->name("create");
         });
 
 

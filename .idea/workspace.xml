@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81937f2-e223-4a74-be41-6793a4d014be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/inventory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,12 +200,26 @@
       <workItem from="1612707573834" duration="363000" />
       <workItem from="1612779330263" duration="8836000" />
       <workItem from="1612789312918" duration="6619000" />
-      <workItem from="1612842299227" duration="12986000" />
+      <workItem from="1612842299227" duration="13089000" />
+      <workItem from="1612871189719" duration="3000" />
+      <workItem from="1613055815536" duration="644000" />
+      <workItem from="1613114110389" duration="15000" />
+      <workItem from="1613521434663" duration="5777000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -219,9 +238,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612793138496" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1612846519211">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="529" y="290" key="NewPhpFileDialog" timestamp="1613523174517">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="529" y="290" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1613523174517" />
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612846519211" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1612789288584">
       <screen x="0" y="0" width="1920" height="1040" />
