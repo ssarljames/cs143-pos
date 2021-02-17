@@ -6,6 +6,8 @@
     RewriteEngine On
 
 
+    RewriteRule ^index.php/(.+) /$1 [R=301,L]
+
     # Force HTTPS for assets
     RewriteCond %{HTTPS} off
     # First rewrite to HTTPS:
