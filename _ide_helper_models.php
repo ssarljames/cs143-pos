@@ -41,14 +41,22 @@ namespace App\Models{
  * @property float $price
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $unit_type
+ * @property float $available_stock
+ * @property int|null $critical_stock
+ * @property-read mixed $available_stock_formatted
+ * @property-read mixed $is_by_pieces
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereAvailableStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereCategoryId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereCriticalStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereUnitType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product whereUpdatedAt($value)
  */
 	class Product extends \Eloquent {}

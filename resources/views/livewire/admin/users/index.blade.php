@@ -26,10 +26,30 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Username</th>
-                        <th>Role</th>
+                        <th>
+                            <a wire:click.prevent="sortBy('last_name')" role="button" href="#">
+                                Last Name
+                                @include('templates._sort-icon', ['field' => 'last_name'])
+                            </a>
+                        </th>
+                        <th>
+                            <a wire:click.prevent="sortBy('first_name')" role="button" href="#">
+                                First Name
+                                @include('templates._sort-icon', ['field' => 'first_name'])
+                            </a>
+                        </th>
+                        <th>
+                            <a wire:click.prevent="sortBy('username')" role="button" href="#">
+                                Username
+                                @include('templates._sort-icon', ['field' => 'username'])
+                            </a>
+                        </th>
+                        <th>
+                            <a wire:click.prevent="sortBy('role')" role="button" href="#">
+                                Role
+                                @include('templates._sort-icon', ['field' => 'role'])
+                            </a>
+                        </th>
                         <th></th>
                     </tr>
                     </thead>
@@ -44,7 +64,8 @@
                                 <a class="btn" href="{{ route("users.edit", $user->id) }}">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <button class="btn delete-button" data-delete-listener="deleteItem" data-id="{{ $user->id }}">
+                                <button class="btn delete-button" data-delete-listener="deleteItem"
+                                        data-id="{{ $user->id }}">
                                     <i class="fa fa-trash text-danger"></i>
                                 </button>
                             </td>
@@ -53,6 +74,10 @@
                     </tbody>
                 </table>
                 <div class="loading" wire:loading></div>
+
+                <div class="text-right">
+                    {!! $users->links() !!}
+                </div>
             </div>
         </div>
     </div>

@@ -47,6 +47,17 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
         });
 
 
+
+        Route::group(["prefix" => "products", "as" => "products."], function () {
+            Route::get("/create", "ProductController@create")->name("create");
+            Route::get("/", "ProductController@index")->name("index");
+            Route::post("/", "ProductController@store")->name("store");
+            Route::get("/{product}", "ProductController@show")->name("show");
+            Route::get("/{product}/edit", "ProductController@edit")->name("edit");
+            Route::put("/{product}", "ProductController@update")->name("update");
+        });
+
+
     });
 
     Route::get("account", "AuthController@account")->name("account");

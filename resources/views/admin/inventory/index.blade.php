@@ -4,7 +4,8 @@
 
 @section("page-content")
 
-    <div class="text-right">
-        <a class="btn btn-info" href="{{ route("categories.index") }}">Product Categories</a>
-    </div>
+
+
+    @livewire("admin.product.index")
+
 @endsection

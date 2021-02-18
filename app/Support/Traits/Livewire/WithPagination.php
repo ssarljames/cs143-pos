@@ -10,6 +10,9 @@ trait WithPagination
 {
     use LivewireWithPagination;
 
+
+    protected $paginationTheme = 'bootstrap';
+
     public $perPage = 10;
 
     /**
