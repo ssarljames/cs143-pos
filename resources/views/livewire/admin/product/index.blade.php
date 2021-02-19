@@ -63,7 +63,13 @@
                         @include('templates._sort-icon', ['field' => 'available_stock'])
                     </a>
                 </th>
-                <th></th>
+                <th style="width: 200px" class="text-center">
+                    <a wire:click.prevent="sortBy('category')" role="button" href="#">
+                        Category
+                        @include('templates._sort-icon', ['field' => 'category'])
+                    </a>
+                </th>
+                <th style="width: 100px"></th>
             </tr>
             </thead>
             <tbody>
@@ -72,6 +78,7 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ number_format($product->price, 2) }}</td>
                     <td class="text-right pr-5">{{ $product->available_stock_formatted }}</td>
+                    <td class="text-right pr-5">{{ $product->category->name }}</td>
                     <td class="text-right">
                         <a href="{{ route("products.show", $product->id) }}" class="btn btn-outline-secondary btn-sm">
                             <i class="fa fa-eye"></i> View

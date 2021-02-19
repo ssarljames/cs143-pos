@@ -44,4 +44,22 @@ class Transaction extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function getNewOR()
+    {
+        $month = today()->format("m");
+        $year = today()->format("Y");
+
+        $count = Transaction::query()
+            ->whereMonth("created_at", $month)
+            ->whereYear("created_at", $year)
+            ->count() + 1;
+
+        return "OR-$year-$month-" . str_pad("$count", 6, "0", STR_PAD_LEFT);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(TransactionItem::class);
+    }
 }

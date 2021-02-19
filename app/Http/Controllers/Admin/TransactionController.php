@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Model\Transaction;
+use App\Models\Transaction;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -33,35 +33,22 @@ class TransactionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param Transaction $transaction
-     * @return Response
+     * @return Application|Factory|Response|View
      */
     public function show(Transaction $transaction)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Transaction $transaction
-     * @return Response
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
+        $transaction->load([
+            "items.product",
+            "customer",
+            "user"
+        ]);
+
+        return view("admin.transaction.show", [
+            "transaction" => $transaction
+        ]);
     }
 }

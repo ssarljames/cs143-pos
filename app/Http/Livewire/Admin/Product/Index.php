@@ -28,11 +28,17 @@ class Index extends Component
     public function render()
     {
         $products = Product::query()
-            ->where("name", "like", "%{$this->search}%")
+            ->search($this->search)
             ->when($this->criticalOnly, function (Builder $query) {
                 $query->whereRaw("available_stock <= critical_stock");
             })
-            ->orderBy($this->sortField, $this->sortAsc ? "asc" : "desc")
+            ->when($this->sortField === "category", function (Builder $query) {
+                $query->join("categories", "categories.id", "=", "products.category_id")
+                    ->orderBy("categories.name", $this->sortAsc ? "asc" : "desc")
+                    ->selectRaw("products.*");
+            }, function (Builder $query) {
+                $query->orderBy($this->sortField, $this->sortAsc ? "asc" : "desc");
+            })
             ->paginate();
 
         return view('livewire.admin.product.index', [

@@ -23,9 +23,9 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             return view('admin.dashboard.index');
         });
 
-        Route::get('/inventory', "InventoryController")->name("inventory");
+        Route::get('/inventory', "InventoryController")->name("inventory")->middleware("manager-only");
 
-        Route::group(["prefix" => "users", "as" => "users."], function () {
+        Route::group(["prefix" => "users", "as" => "users.", "middleware" => "admin-only"], function () {
             Route::get("/", "UserController@index")->name("index");
             Route::post("/", "UserController@store")->name("store");
             Route::get("/{user}/edit", "UserController@edit")->name("edit");
@@ -34,7 +34,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
         });
 
 
-        Route::group(["prefix" => "categories", "as" => "categories."], function () {
+        Route::group(["prefix" => "categories", "as" => "categories.", "middleware" => "manager-only"], function () {
             Route::get("/", "CategoryController@index")->name("index");
             Route::post("/", "CategoryController@store")->name("store");
             Route::get("/{category}/edit", "CategoryController@edit")->name("edit");
@@ -44,7 +44,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
 
 
 
-        Route::group(["prefix" => "products", "as" => "products."], function () {
+        Route::group(["prefix" => "products", "as" => "products.", "middleware" => "manager-only"], function () {
             Route::get("/create", "ProductController@create")->name("create");
             Route::get("/", "ProductController@index")->name("index");
             Route::post("/", "ProductController@store")->name("store");
@@ -55,7 +55,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
 
 
 
-        Route::group(["prefix" => "customers", "as" => "customers."], function () {
+        Route::group(["prefix" => "customers", "as" => "customers.", "middleware" => "manager-only"], function () {
             Route::get("/create", "CustomerController@create")->name("create");
             Route::get("/", "CustomerController@index")->name("index");
             Route::post("/", "CustomerController@store")->name("store");

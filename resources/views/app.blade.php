@@ -122,6 +122,7 @@
 
 @include("templates.scripts")
 @yield("scripts")
+@stack("stackedScripts")
 @stack("livewire-scripts")
 
 </body>

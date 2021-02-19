@@ -10,35 +10,6 @@
  */
 
 
-namespace App\Model{
-/**
- * App\Model\Transaction
- *
- * @property int $id
- * @property int|null $customer_id
- * @property int $user_id
- * @property string $or_number
- * @property string|null $reserved_at
- * @property float $total_amount
- * @property string|null $deleted_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereCustomerId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereOrNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereReservedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereTotalAmount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Transaction whereUserId($value)
- */
-	class Transaction extends \Eloquent {}
-}
-
 namespace App\Models{
 /**
  * App\Models\Category
@@ -75,7 +46,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer search($search)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer search($search, $nameOnly = false)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer whereContactNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer whereCreatedAt($value)
@@ -133,6 +104,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Customer|null $customer
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TransactionItem[] $items
+ * @property-read int|null $items_count
  * @property-read \App\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction newQuery()

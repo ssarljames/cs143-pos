@@ -1,5 +1,6 @@
 <div>
-    <div class="row">
+    @if($transactionSaved === false)
+        <div class="row">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
@@ -19,6 +20,7 @@
                             <tr>
                                 <th>Product</th>
                                 <th>Price</th>
+                                <th>Stock</th>
                                 <th>Sold By</th>
                                 <th></th>
                             </tr>
@@ -28,6 +30,7 @@
                                 <tr wire:key="search-{{ $product["id"] }}">
                                     <td>{{ $product["name"] }}</td>
                                     <td>{{ $product["price"] }}</td>
+                                    <td class="text-center">{{ (int)$product["available_stock"] }}</td>
                                     <td>{{ $product["unit_type"] }}</td>
                                     <td class="text-right">
                                         <button wire:click="addItem({{ $product["id"] }})" class="btn btn-outline-dark btn-sm ">
@@ -44,6 +47,105 @@
             </div>
         </div>
         <div class="col-md-6">
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            @if($settingCustomer === false)
+
+                                @if($customer === null)
+                                    <button class="btn btn-outline-dark btn-sm" wire:click="$set('settingCustomer', true)">Set Customer</button>
+                                @else
+                                    <h5>Customer: {{ $customer["name"] }}</h5>
+                                    <hr>
+                                    <div class="text-right">
+                                        <button class="btn btn-secondary btn-sm" wire:click="$set('settingCustomer', true)">Change</button>
+                                        <button class="btn btn-outline-danger btn-sm" wire:click="$set('customer', null)">Remove</button>
+                                    </div>
+                                @endif
+
+
+                            @else
+
+                                <div class="inner-addon right-addon border rounded">
+                                    <i class="fa fa-search text-warning"></i>
+                                    <input wire:model="searchCustomer" type="text" placeholder="Search existing customer..."
+                                           class="form-control"/>
+                                </div>
+
+                                @if($customers)
+
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($customers as $customer)
+                                            <tr wire:key="cust-{{ $customer["id"] }}">
+                                                <td>{{ $customer["name"] }}</td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-info btn-sm" wire:click="setCustomer({{ $customer["id"] }})">Select</button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                @elseif($searchCustomer)
+                                    <p class="mt-3">No result for <i>"{{ $searchCustomer }}"</i> </p>
+                                @endif
+
+
+                                <div class="text-right">
+                                    <button class="btn btn-outline-dark btn-sm" wire:click="$set('settingCustomer', false)">Cancel</button>
+                                </div>
+
+
+
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="card">
+                        <div class="card-body">
+
+
+
+                                <div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">Cash</label>
+                                        <input type="number" @if(count($items) === 0) disabled @endif wire:model="cash" class="form-control" placeholder="Enter cash">
+                                    </div>
+
+
+
+                                    <div class="d-flex align-items-center">
+                                        @if(count($items) > 0 && $cash >= $total)
+                                            <h5>Change:  {{ number_format($cash - $total, 2)}}</h5>
+                                        @endif
+                                        <button wire:click="checkout" class="btn btn-primary ml-auto" @if($cash < $total || $settingCustomer || count($items) === 0) disabled @endif>
+                                            <i class="fa fa-shopping-cart"></i>
+                                            Checkout
+                                        </button>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-header">
                     <h5>Items</h5>
@@ -108,37 +210,16 @@
 
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-body">
-
-
-
-                    @if(count($items) > 0)
-                        <div class="mt-3">
-
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label">Cash</label>
-                                        <input type="number" wire:model="cash" class="form-control" placeholder="Enter cash">
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div>
-                                <button class="btn btn-primary" @if($cash < $total) disabled @endif>
-                                    <i class="fa fa-shopping-cart"></i>
-                                    Checkout
-                                </button>
-                            </div>
-                        </div>
-                    @endif
-                </div>
-            </div>
         </div>
     </div>
+
+    @else
+        <div class="alert alert-success">
+            <h3>Success!</h3>
+            <p>Transaction successfully saved.</p>
+
+            <br><br>
+            <button class="btn btn-primary" wire:click="$set('transactionSaved', false)">Okay</button>
+        </div>
+    @endif
 </div>

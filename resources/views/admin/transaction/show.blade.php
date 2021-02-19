@@ -21,31 +21,61 @@
 
                     <h5 class="d-flex flex-row align-items-center">
                         Transaction Information
-
-                        <a href="{{ route("transactions.edit", $transaction->id)  }}" title="Edit transaction info" class="btn btn-outline-secondary ml-auto">
-                            <i class="fa fa-edit"></i>
-                        </a>
                     </h5>
                     <hr>
 
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
-                                <td>Transaction Name</td>
-                                <td>{{ $transaction->name }}</td>
+                                <td>OR Number</td>
+                                <td>{{ $transaction->or_number }}</td>
                             </tr>
                             <tr>
-                                <td>Address</td>
-                                <td>{{ $transaction->address }}</td>
+                                <td>Customer</td>
+                                <td>{{ $transaction->customer->name ?? "N/A" }}</td>
                             </tr>
                             <tr>
-                                <td>Contact Number</td>
-                                <td>{{ $transaction->contact_number }}</td>
+                                <td>User</td>
+                                <td>{{ $transaction->user->username }}</td>
                             </tr>
                             <tr>
-                                <td>Since</td>
-                                <td>{{ $transaction->created_at->format("F d, Y") }}</td>
+                                <td>Total Amount</td>
+                                <td>P {{ number_format($transaction->total_amount, 2) }}</td>
                             </tr>
+                            <tr>
+                                <td>Transaction Date</td>
+                                <td>{{ $transaction->created_at->format("F d, Y h:i A") }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Items</h5>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($transaction->items as $item)
+                            <tr>
+                                <td>{{ $item->product->name }}</td>
+                                <td class="text-right pr-3">{{ $item->price }}</td>
+                                <td>{{ $item->quantity }}</td>
+                                <td class="text-right">{{ number_format($item->amount, 2) }}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -31,7 +31,7 @@ class Product extends Model
         return empty($search)
             ? $query
             : $query->where(function (Builder $query) use (&$search) {
-                $query->where("name", "like", "%$search%");
+                $query->where("products.name", "like", "%$search%");
             });
     }
 

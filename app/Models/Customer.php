@@ -14,17 +14,23 @@ class Customer extends Model
         "contact_number",
     ];
 
-    public function scopeSearch(Builder $query, $search)
+    protected $appends = [
+        "name"
+    ];
+
+    public function scopeSearch(Builder $query, $search, $nameOnly = false)
     {
         $search = trim($search);
 
         return empty($search)
             ? $query
-            : $query->where(function (Builder $query) use (&$search) {
+            : $query->where(function (Builder $query) use (&$search, &$nameOnly) {
                 $query->where("first_name", "like", "%$search%")
-                    ->orWhere("last_name", "like", "%$search%")
-                    ->orWhere("address", "like", "%$search%")
-                    ->orWhere("contact_number", "like", "%$search%");
+                    ->orWhere("last_name", "like", "%$search%");
+
+                if ($nameOnly === false)
+                    $query->orWhere("address", "like", "%$search%")
+                        ->orWhere("contact_number", "like", "%$search%");
             });
     }
 
