@@ -81,6 +81,14 @@
 
                                 </td>
                             </tr>
+
+                            @if($transaction->status === \App\Models\Transaction::COMPLETED)
+                                <tr>
+                                    <td>Completed At</td>
+                                    <td>{{ $transaction->completed_at ? $transaction->completed_at->format("F d, Y h:i A") : $transaction->created_at->format("F d, Y h:i A") }}</td>
+                                </tr>
+                            @endif
+
                         </tbody>
                     </table>
                 </div>
