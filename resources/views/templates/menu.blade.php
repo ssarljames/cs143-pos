@@ -8,7 +8,7 @@
         ],
         [
             "label" => "Transactions",
-            "route" => route("transactions"),
+            "route" => route("transactions.index"),
             "icon" => "nc-icon nc-cart-simple"
         ],
         [
@@ -17,9 +17,14 @@
             "icon" => "nc-icon nc-box"
         ],
         [
+            "label" => "Customers",
+            "route" => route("customers.index"),
+            "icon" => "fa fa-users"
+        ],
+        [
             "label" => "Users",
             "route" => route("users.index"),
-            "icon" => "fa fa-group"
+            "icon" => "fa fa-user-secret"
         ],
     ];
 

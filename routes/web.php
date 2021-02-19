@@ -23,10 +23,6 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             return view('admin.dashboard.index');
         });
 
-        Route::get('/transactions', function () {
-            return view('admin.dashboard.index');
-        })->name("transactions");
-
         Route::get('/inventory', "InventoryController")->name("inventory");
 
         Route::group(["prefix" => "users", "as" => "users."], function () {
@@ -55,6 +51,24 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             Route::get("/{product}", "ProductController@show")->name("show");
             Route::get("/{product}/edit", "ProductController@edit")->name("edit");
             Route::put("/{product}", "ProductController@update")->name("update");
+        });
+
+
+
+        Route::group(["prefix" => "customers", "as" => "customers."], function () {
+            Route::get("/create", "CustomerController@create")->name("create");
+            Route::get("/", "CustomerController@index")->name("index");
+            Route::post("/", "CustomerController@store")->name("store");
+            Route::get("/{customer}", "CustomerController@show")->name("show");
+            Route::get("/{customer}/edit", "CustomerController@edit")->name("edit");
+            Route::put("/{customer}", "CustomerController@update")->name("update");
+        });
+
+        Route::group(["prefix" => "transactions", "as" => "transactions."], function () {
+            Route::get("/create", "TransactionController@create")->name("create");
+            Route::get("/", "TransactionController@index")->name("index");
+            Route::post("/", "TransactionController@store")->name("store");
+            Route::get("/{transaction}", "TransactionController@show")->name("show");
         });
 
 

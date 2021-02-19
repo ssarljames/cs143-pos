@@ -20,17 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81937f2-e223-4a74-be41-6793a4d014be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/templates/_sort-icon.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Customer/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Transaction/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customers/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customers/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customers/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customers/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transaction/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transaction/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transaction/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transaction/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/customer/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/transaction/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/InventoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Support/Traits/Livewire/WithPagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Support/Traits/Livewire/WithPagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inventory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inventory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,22 +177,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/livewire/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GIT\pos\resources\views\livewire\admin" />
+      <recent name="C:\GIT\pos\app\Http\Livewire\Admin" />
+      <recent name="C:\GIT\pos\resources\views\admin" />
+      <recent name="C:\GIT\pos\resources\views\admin\products" />
+      <recent name="C:\GIT\pos\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GIT\pos\resources\views\admin\customers" />
       <recent name="C:\GIT\pos\app\Http\Requests\Admin\Product" />
       <recent name="C:\GIT\pos\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GIT\pos\app" />
-      <recent name="C:\GIT\pos\resources\views\admin\products" />
-      <recent name="C:\GIT\pos\resources\views\templates" />
-      <recent name="C:\GIT\pos\resources\views\admin\auth" />
-      <recent name="C:\GIT\pos" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,7 +225,8 @@
       <workItem from="1613533332656" duration="255000" />
       <workItem from="1613533600571" duration="106000" />
       <workItem from="1613646191510" duration="3501000" />
-      <workItem from="1613650866044" duration="6760000" />
+      <workItem from="1613650866044" duration="6968000" />
+      <workItem from="1613704675078" duration="6366000" />
     </task>
     <servers />
   </component>
@@ -253,10 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612793138496" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613655502157">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613708987838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613655502157" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613708987838" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1613647375110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -266,10 +273,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613533698090" />
-    <state x="707" y="448" width="585" height="592" key="find.popup" timestamp="1612793011293">
+    <state x="707" y="448" width="585" height="592" key="find.popup" timestamp="1613707393198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="707" y="448" width="585" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612793011293" />
+    <state x="707" y="448" width="585" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613707393198" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1612786101777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

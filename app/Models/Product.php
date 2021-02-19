@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -22,6 +23,17 @@ class Product extends Model
         "available_stock",
         "critical_stock",
     ];
+
+    public function scopeSearch(Builder $query, $search)
+    {
+        $search = trim($search);
+
+        return empty($search)
+            ? $query
+            : $query->where(function (Builder $query) use (&$search) {
+                $query->where("name", "like", "%$search%");
+            });
+    }
 
     protected function category()
     {
