@@ -17,6 +17,7 @@ class Index extends Component
     {
         $customers = Customer::query()
             ->search($this->search)
+            ->withCount("transactions")
             ->orderBy($this->sortField, $this->sortAsc ? "asc" : "desc")
             ->paginate();
 

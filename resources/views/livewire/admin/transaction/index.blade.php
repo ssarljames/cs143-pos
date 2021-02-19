@@ -58,6 +58,12 @@
                     </a>
                 </th>
                 <th>
+                    <a wire:click.prevent="sortBy('status')" role="button" href="#">
+                        Status
+                        @include('templates._sort-icon', ['field' => 'status'])
+                    </a>
+                </th>
+                <th>
                     <a wire:click.prevent="sortBy('user')" role="button" href="#">
                         User
                         @include('templates._sort-icon', ['field' => 'user'])
@@ -73,6 +79,7 @@
                     <td>{{ $transaction->created_at->format("M d, Y h:i A") }}</td>
                     <td>{{ $transaction->or_number }}</td>
                     <td class="text-right pr-5">{{ number_format($transaction->total_amount, 2) }}</td>
+                    <td>{{ strtoupper($transaction->status) }}</td>
                     <td>{{ $transaction->user->username }}</td>
                     <td class="text-right">
                         <a href="{{ route("transactions.show", $transaction->id) }}" class="btn btn-outline-secondary btn-sm">

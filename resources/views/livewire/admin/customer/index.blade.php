@@ -52,6 +52,12 @@
                         @include('templates._sort-icon', ['field' => 'created_at'])
                     </a>
                 </th>
+                <th>
+                    <a wire:click.prevent="sortBy('transactions_count')" role="button" href="#">
+                        Transactions
+                        @include('templates._sort-icon', ['field' => 'transactions_count'])
+                    </a>
+                </th>
                 <th></th>
             </tr>
             </thead>
@@ -62,6 +68,7 @@
                     <td>{{ $customer->address }}</td>
                     <td>{{ $customer->contact_number }}</td>
                     <td>{{ $customer->created_at->format("F d, Y") }}</td>
+                    <td class="text-center">{{ $customer->transactions_count > 0 ? $customer->transactions_count : "" }}</td>
                     <td class="text-right">
                         <a href="{{ route("customers.show", $customer->id) }}" class="btn btn-outline-secondary btn-sm">
                             <i class="fa fa-eye"></i> View

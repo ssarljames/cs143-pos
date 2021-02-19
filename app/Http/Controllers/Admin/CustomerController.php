@@ -66,8 +66,13 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
+
+        $transactions = $customer->transactions()
+            ->paginate();
+
         return view("admin.customers.show", [
-            "customer" => $customer
+            "customer" => $customer,
+            "transactions" => $transactions
         ]);
     }
 

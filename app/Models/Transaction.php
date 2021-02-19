@@ -11,15 +11,29 @@ class Transaction extends Model
 {
     use SoftDeletes;
 
+    const COMPLETED = "completed";
+    const RESERVED = "reserved";
+    const CANCELLED = "cancelled";
+
+    const STATUS = [
+        self::COMPLETED,
+        self::RESERVED,
+        self::CANCELLED
+    ];
+
     protected $fillable = [
         "customer_id",
         "user_id",
         "or_number",
         "total_amount",
         "reserved_at",
+        "status",
+        "completed_at",
     ];
 
-
+    protected $dates = [
+        "completed_at"
+    ];
 
     public function scopeSearch(Builder $query, $search)
     {

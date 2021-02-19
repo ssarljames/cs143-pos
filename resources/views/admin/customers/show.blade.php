@@ -51,5 +51,35 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Customer Transactions</h5>
+                </div>
+                <div class="card-body">
+
+                    <table class="table table-borderless">
+                        <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>OR Number</th>
+                            <th>Total Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($transactions as $transaction)
+                            <tr>
+                                <td>{{ $transaction->created_at->format("M d, Y h:i A") }}</td>
+                                <td>
+                                    <a href="{{ route("transactions.show", $transaction->id) }}" target="_blank">{{ $transaction->or_number }}</a>
+                                </td>
+                                <td class="text-right">{{ number_format($transaction->total_amount, 2) }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

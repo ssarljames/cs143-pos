@@ -38,4 +38,9 @@ class Customer extends Model
     {
         return $this->first_name . " " . $this->last_name;
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
