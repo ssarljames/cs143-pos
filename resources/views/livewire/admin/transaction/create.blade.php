@@ -138,6 +138,13 @@
                                             <i class="fa fa-shopping-cart"></i>
                                             Checkout
                                         </button>
+
+                                        @if(count($items) > 0 && $customer !== null && $settingCustomer === false && empty($cash))
+                                            <button wire:click="checkout(true)" class="btn btn-warning ml-1" >
+                                                <i class="fa fa-address-book"></i>
+                                                Reserve
+                                            </button>
+                                        @endif
                                     </div>
                                 </div>
 

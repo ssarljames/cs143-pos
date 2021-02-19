@@ -43,6 +43,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read mixed $name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Transaction[] $transactions
+ * @property-read int|null $transactions_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Customer query()
@@ -75,6 +77,7 @@ namespace App\Models{
  * @property-read mixed $is_by_pieces
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Transaction[] $transactions
  * @property-read int|null $transactions_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product criticalStock()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
@@ -105,21 +108,27 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $status
+ * @property \Illuminate\Support\Carbon|null $completed_at
  * @property-read \App\Models\Customer|null $customer
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TransactionItem[] $items
  * @property-read int|null $items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
  * @property-read \App\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Transaction onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction search($search)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereCompletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereCustomerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereOrNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereReservedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereTotalAmount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Transaction whereUserId($value)
@@ -173,6 +182,7 @@ namespace App{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read mixed $full_name
+ * @property-read mixed $name
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User newModelQuery()

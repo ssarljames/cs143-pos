@@ -22,8 +22,10 @@ $(document).ready(function () {
     });
 
     $('form').on('submit', function(){
-        NProgress.start();
 
-        $(this).find(`button[type="submit"]`).attr("disabled", true)
+        if ($(this).hasClass("no-progress") === false) {
+            NProgress.start();
+            $(this).find(`button[type="submit"]`).attr("disabled", true)
+        }
     })
 })

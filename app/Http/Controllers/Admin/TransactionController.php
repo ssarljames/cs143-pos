@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class TransactionController extends Controller
@@ -50,5 +51,36 @@ class TransactionController extends Controller
         return view("admin.transaction.show", [
             "transaction" => $transaction
         ]);
+    }
+
+    public function changeStatus(Request $request, Transaction $transaction)
+    {
+        if ($request->has("checkout") && $transaction->created_at->addDays(3)->gte(today())) {
+            $transaction->update([
+                "status" => Transaction::COMPLETED,
+                "completed_at" => now()
+            ]);
+        }
+
+        if ($request->has("cancel")) {
+
+            DB::transaction(function () use (&$transaction) {
+
+                $transaction->update([
+                    "status" => Transaction::CANCELLED,
+                    "completed_at" => now()
+                ]);
+
+                foreach ($transaction->products()->withPivot(["quantity"])->get() as $product) {
+                    $product->update([
+                        "available_stock" => DB::raw("available_stock + {$product->pivot->quantity}")
+                    ]);
+                }
+            });
+
+
+        }
+
+        return redirect()->back();
     }
 }

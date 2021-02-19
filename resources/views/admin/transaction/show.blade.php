@@ -46,6 +46,41 @@
                                 <td>Transaction Date</td>
                                 <td>{{ $transaction->created_at->format("F d, Y h:i A") }}</td>
                             </tr>
+                            <tr>
+                                <td class="align-top">Transaction Status</td>
+                                <td>
+                                    {{ strtoupper($transaction->status) }}
+                                    @if($transaction->status === \App\Models\Transaction::RESERVED)
+                                        <div class="mt-3">
+                                            <form class="no-progress" action="{{ route("transactions.update-status", $transaction->id) }}" onsubmit="return confirm('Proceed?')" method="POST">
+                                                @csrf
+                                                @method("PUT")
+
+                                                @if($transaction->created_at->addDays(3)->gte(today()))
+                                                    <button class="btn btn-success" name="checkout" type="submit" value="1">
+                                                        <i class="fa fa-check"></i>
+                                                        Checkout
+                                                    </button>
+                                                    <button class="btn btn-danger" type="submit" name="cancel" value="1">
+                                                        <i class="fa fa-trash"></i>
+                                                        Cancel Transaction
+                                                    </button>
+                                                @else
+                                                    <div class="alert alert-danger">
+                                                        <strong>Reservation Expired</strong>
+                                                        <p>The transaction was reserved more than 3 days ago. It can't be checkout</p>
+                                                        <button class="btn btn-danger" type="submit" name="cancel" value="1">
+                                                            <i class="fa fa-trash"></i>
+                                                            Cancel Transaction
+                                                        </button>
+                                                    </div>
+                                                @endif
+                                            </form>
+                                        </div>
+                                    @endif
+
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -70,7 +105,11 @@
                         <tbody>
                         @foreach($transaction->items as $item)
                             <tr>
-                                <td>{{ $item->product->name }}</td>
+                                <td>
+                                    <a href="{{ route("products.show", $item->product_id) }}" target="_blank">
+                                        {{ $item->product->name }}
+                                    </a>
+                                </td>
                                 <td class="text-right pr-3">{{ $item->price }}</td>
                                 <td>{{ $item->quantity }}</td>
                                 <td class="text-right">{{ number_format($item->amount, 2) }}</td>

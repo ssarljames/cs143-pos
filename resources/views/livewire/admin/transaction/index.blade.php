@@ -79,7 +79,9 @@
                     <td>{{ $transaction->created_at->format("M d, Y h:i A") }}</td>
                     <td>{{ $transaction->or_number }}</td>
                     <td class="text-right pr-5">{{ number_format($transaction->total_amount, 2) }}</td>
-                    <td>{{ strtoupper($transaction->status) }}</td>
+                    <td>
+                        <span class="{{ $transaction->color }}">{{ strtoupper($transaction->status) }}</span>
+                    </td>
                     <td>{{ $transaction->user->username }}</td>
                     <td class="text-right">
                         <a href="{{ route("transactions.show", $transaction->id) }}" class="btn btn-outline-secondary btn-sm">

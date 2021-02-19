@@ -71,6 +71,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
             Route::get("/", "TransactionController@index")->name("index");
             Route::post("/", "TransactionController@store")->name("store");
             Route::get("/{transaction}", "TransactionController@show")->name("show");
+            Route::put("/{transaction}", "TransactionController@changeStatus")->name("update-status");
         });
 
 

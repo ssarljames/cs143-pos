@@ -39,12 +39,13 @@ class Transaction extends Model
     {
         $search = trim($search);
 
+
         return empty($search)
             ? $query
             : $query->where(function (Builder $query) use (&$search) {
                 $query->where("or_number", "like", "%$search%")
                     ->orWhereHas("customer", function (Builder $query) use (&$search) {
-                        $query->search($query);
+                        $query->search($search);
                     });
             });
     }
@@ -75,5 +76,22 @@ class Transaction extends Model
     public function items()
     {
         return $this->hasMany(TransactionItem::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, TransactionItem::class);
+    }
+
+    public function getColorAttribute()
+    {
+        switch ($this->status) {
+            case self::COMPLETED:
+                return "badge badge-success";
+            case self::CANCELLED:
+                return "badge badge-danger";
+            case self::RESERVED:
+                return "badge badge-warning";
+        }
     }
 }

@@ -106,9 +106,9 @@ class Create extends Component
         $this->searchCustomer = "";
     }
 
-    public function checkout()
+    public function checkout($reserved = false)
     {
-        $this->transactionSaved = DB::transaction(function () {
+        $this->transactionSaved = DB::transaction(function () use (&$reserved) {
 
             $transaction = Transaction::create([
                 "customer_id" => $this->customer ? $this->customer["id"] : null,
@@ -116,6 +116,8 @@ class Create extends Component
                 "or_number" => Transaction::getNewOR(),
                 "total_amount" => $this->total,
                 "reserved_at" => null,
+                "completed_at" => $reserved ? null : now(),
+                "status" => $reserved ? Transaction::RESERVED : Transaction::COMPLETED
             ]);
 
             foreach ($this->items as $item) {
