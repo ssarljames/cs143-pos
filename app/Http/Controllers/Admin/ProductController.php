@@ -79,8 +79,14 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+
+        $transactions = $product->transactions()
+            ->withPivot(["quantity"])
+            ->paginate();
+
         return view("admin.products.show", [
-            "product" => $product
+            "product" => $product,
+            "transactions" => $transactions,
         ]);
     }
 

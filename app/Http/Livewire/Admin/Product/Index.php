@@ -30,7 +30,7 @@ class Index extends Component
         $products = Product::query()
             ->search($this->search)
             ->when($this->criticalOnly, function (Builder $query) {
-                $query->whereRaw("available_stock <= critical_stock");
+                $query->criticalStock();
             })
             ->when($this->sortField === "category", function (Builder $query) {
                 $query->join("categories", "categories.id", "=", "products.category_id")

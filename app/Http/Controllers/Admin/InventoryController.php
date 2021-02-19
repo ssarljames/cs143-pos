@@ -20,6 +20,10 @@ class InventoryController extends Controller
      */
     public function __invoke(Request $request)
     {
+        if ($request->has("critical")) {
+            session()->put("criticalOnly", $request->critical === "1");
+        }
+
         return view("admin.inventory.index");
     }
 }

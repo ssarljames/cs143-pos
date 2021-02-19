@@ -73,6 +73,8 @@ namespace App\Models{
  * @property int|null $critical_stock
  * @property-read mixed $available_stock_formatted
  * @property-read mixed $is_by_pieces
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Transaction[] $transactions
+ * @property-read int|null $transactions_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
@@ -139,6 +141,7 @@ namespace App\Models{
  * @property float $amount
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Product $product
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\TransactionItem newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\TransactionItem newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\TransactionItem query()

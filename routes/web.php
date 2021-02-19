@@ -19,9 +19,11 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
 
     Route::group(["middleware" => "active-account"], function () {
 
-        Route::get('/', function () {
-            return view('admin.dashboard.index');
+
+        Route::group(["prefix" => "/", "as" => "dashboard."], function () {
+            Route::get("/", "DashboardController@index")->name("index");
         });
+
 
         Route::get('/inventory', "InventoryController")->name("inventory")->middleware("manager-only");
 

@@ -51,4 +51,15 @@ class Product extends Model
             ? (int) $this->available_stock
             : number_format($this->available_stock, 2);
     }
+
+    public function transactions()
+    {
+        return $this->belongsToMany(Transaction::class, TransactionItem::class)
+            ->orderBy("transactions.created_at", "desc");
+    }
+
+    public function scopeCriticalStock(Builder $query)
+    {
+        return $query->whereRaw("products.available_stock <= products.critical_stock");
+    }
 }

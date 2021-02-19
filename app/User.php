@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return ucwords(strtolower($this->first_name . " " . $this->last_name));
     }
+
+    public function getNameAttribute()
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
 }
