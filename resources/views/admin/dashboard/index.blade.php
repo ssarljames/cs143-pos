@@ -44,7 +44,7 @@
             <a href="{{ route("customers.index") }}" class="card">
                 <div class="card-body">
                     <h1 class="d-flex flex-row align-items-center">
-                        {{ \App\Models\Product::criticalStock()->count() }}
+                        {{ \App\Models\Customer::count() }}
                         <i class="fa fa-users ml-auto"></i>
                     </h1>
                     <span>Customers</span>
