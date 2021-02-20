@@ -7,7 +7,7 @@
 
                     <div class="inner-addon right-addon border rounded">
                         <i class="fa fa-search text-warning"></i>
-                        <input wire:model="search" type="text" placeholder="Search product..."
+                        <input wire:model="search" id="search-product" type="text" placeholder="Search product..."
                                class="form-control"/>
                     </div>
 
@@ -15,28 +15,22 @@
 
                         <div class="loading" wire:target="search" wire:loading></div>
 
-                        <table class="table mt-3">
+                        <table class="table mt-3 table-hover">
                             <thead>
                             <tr>
                                 <th>Product</th>
                                 <th>Price</th>
                                 <th>Stock</th>
                                 <th>Sold By</th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $product)
-                                <tr wire:key="search-{{ $product["id"] }}">
+                                <tr wire:key="search-{{ $product["id"] }}" style="cursor:pointer;" wire:click="addItem({{ $product["id"] }})" >
                                     <td>{{ $product["name"] }}</td>
                                     <td>{{ $product["price"] }}</td>
                                     <td class="text-center">{{ (int)$product["available_stock"] }}</td>
                                     <td>{{ $product["unit_type"] }}</td>
-                                    <td class="text-right">
-                                        <button wire:click="addItem({{ $product["id"] }})" class="btn btn-outline-dark btn-sm ">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -51,7 +45,7 @@
 
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-xl-6">
 
                     <div class="card">
                         <div class="card-body">
@@ -59,7 +53,10 @@
                             @if($settingCustomer === false)
 
                                 @if($customer === null)
-                                    <button class="btn btn-outline-dark btn-sm" wire:click="$set('settingCustomer', true)">Set Customer</button>
+
+                                    <span class="text-muted">No customer assigned. </span>
+
+                                    <button class="btn btn-outline-dark btn-sm" wire:click="$set('settingCustomer', true)">Choose Customer</button>
                                 @else
                                     <h5>Customer: {{ $customer["name"] }}</h5>
                                     <hr>
@@ -114,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xl-6">
 
                     <div class="card">
                         <div class="card-body">
@@ -174,13 +171,16 @@
                         <tbody>
                             @foreach($items as $index => $item)
                                 <tr wire:key="{{ $item["product"]["id"] }}">
-                                    <td>{{ $item["product"]["name"] }}</td>
-                                    <td>
-                                        <input wire:model="items.{{ $index }}.quantity" min="1" wire:key="quantity-{{ $item["product"]["id"] }}" type="number" class="form-control" value="{{ $item["quantity"] }}">
+                                    <td class="align-top">{{ $item["product"]["name"] }}</td>
+                                    <td class="align-top">
+                                        <input wire:model="items.{{ $index }}.quantity" min="1" wire:key="quantity-{{ $item["product"]["id"] }}" type="number" class="form-control @if($lackOfStockProductId === $item["product"]["id"]) is-invalid @endif" value="{{ $item["quantity"] }}">
+                                        @if($lackOfStockProductId === $item["product"]["id"])
+                                            <small class="text-danger">Only {{ $item["product"]["available_stock_formatted"] }} units are available</small>
+                                        @endif
                                     </td>
-                                    <td class="text-right pr-5">{{ $item["product"]["price"] }}</td>
-                                    <td class="text-right">{{ number_format($item["quantity"] * $item["product"]["price"], 2) }}</td>
-                                    <td class="text-right">
+                                    <td class="text-right pr-5 align-top">{{ $item["product"]["price"] }}</td>
+                                    <td class="text-right align-top">{{ number_format($item["quantity"] * $item["product"]["price"], 2) }}</td>
+                                    <td class="text-right align-top">
                                         <button wire:click="removeItem({{ $index }})" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash"></i>
                                         </button>
@@ -230,3 +230,23 @@
         </div>
     @endif
 </div>
+
+
+@push("livewire-scripts")
+    <script>
+
+        window._initCreateTransactionComponent = false;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            Livewire.hook('message.processed', (message, component) => {
+
+                if (window._initCreateTransactionComponent === false) {
+                    @this.on('focusSearchProduct', () => {
+                        $("#search-product").focus()
+                    });
+                    window._initCreateTransactionComponent = true;
+                }
+            })
+        });
+    </script>
+@endpush

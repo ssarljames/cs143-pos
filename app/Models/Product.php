@@ -24,6 +24,10 @@ class Product extends Model
         "critical_stock",
     ];
 
+    protected $appends = [
+        "available_stock_formatted"
+    ];
+
     public function scopeSearch(Builder $query, $search)
     {
         $search = trim($search);

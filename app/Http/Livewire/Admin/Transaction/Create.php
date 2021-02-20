@@ -26,6 +26,8 @@ class Create extends Component
 
     public $transactionSaved = false;
 
+    public $lackOfStockProductId = "";
+
     public function mount()
     {
 
@@ -84,6 +86,7 @@ class Create extends Component
             ];
 
         $this->search = "";
+        $this->emitSelf("focusSearchProduct");
     }
 
 
@@ -121,18 +124,31 @@ class Create extends Component
             ]);
 
             foreach ($this->items as $item) {
-                $transaction->items()->create([
-                    "product_id" => $item["product"]["id"],
-                    "quantity" => $item["quantity"],
-                    "price" => $item["product"]["price"],
-                    "amount" => $item["quantity"] * $item["product"]["price"],
-                ]);
 
-                Product::query()
-                    ->where("id", $item["product"]["id"])
-                    ->update([
-                        "available_stock" => DB::raw("available_stock - {$item["quantity"]}")
+                $product = Product::find($item["product"]["id"]);
+
+
+                if ($item["quantity"] <= $product->available_stock) {
+
+                    $transaction->items()->create([
+                        "product_id" => $item["product"]["id"],
+                        "quantity" => $item["quantity"],
+                        "price" => $item["product"]["price"],
+                        "amount" => $item["quantity"] * $item["product"]["price"],
                     ]);
+
+                    $product->update([
+                        "available_stock" => $product->available_stock - $item["quantity"]
+                    ]);
+                }
+
+                else {
+
+                    $this->lackOfStockProductId = $product->id;
+
+                    DB::rollBack();
+                    return false;
+                }
 
             }
 
@@ -149,6 +165,7 @@ class Create extends Component
                 "settingCustomer",
                 "searchCustomer",
                 "customer",
+                "lackOfStockProductId",
             ]);
         }
 
