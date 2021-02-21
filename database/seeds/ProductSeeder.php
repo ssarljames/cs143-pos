@@ -14,6 +14,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+
         $faker = Factory::create();
 
         $categoryCount = Category::count();

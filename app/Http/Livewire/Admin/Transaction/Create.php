@@ -64,6 +64,14 @@ class Create extends Component
         ]);
     }
 
+    public function validateItems()
+    {
+        foreach ($this->items as $item) {
+            if ($item["quantity"] <= 0)
+                $item["quantity"] = 1;
+        }
+    }
+
     public function removeItem($index)
     {
         array_splice($this->items, $index, 1);
@@ -76,10 +84,8 @@ class Create extends Component
         });
 
         if ($productIndex !== false) {
-           $this->items[$productIndex]["quantity"] += 1;
-        }
-
-        else
+            $this->items[$productIndex]["quantity"] += 1;
+        } else
             $this->items[] = [
                 "product" => Product::find($productId),
                 "quantity" => 1,
@@ -87,15 +93,6 @@ class Create extends Component
 
         $this->search = "";
         $this->emitSelf("focusSearchProduct");
-    }
-
-
-    public function validateItems()
-    {
-        foreach ($this->items as $item) {
-            if ($item["quantity"] <= 0)
-                $item["quantity"] = 1;
-        }
     }
 
     public function setCustomer($customerId)
@@ -140,9 +137,7 @@ class Create extends Component
                     $product->update([
                         "available_stock" => $product->available_stock - $item["quantity"]
                     ]);
-                }
-
-                else {
+                } else {
 
                     $this->lackOfStockProductId = $product->id;
 

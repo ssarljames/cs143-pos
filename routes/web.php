@@ -75,6 +75,7 @@ Route::group(["namespace" => "Admin", "middleware" => "auth"], function () {
         });
 
 
+
     });
 
     Route::get("account", "AuthController@account")->name("account");
